@@ -1,0 +1,49 @@
+---
+import About from "../sections/About.astro";
+import Contact from "../sections/Contact.astro";
+import Presentation from "../sections/Presentation.astro";
+import Projects from "../sections/Projects.astro";
+import Skills from "../sections/Skills.astro";
+import Layout from "../layouts/Layout.astro";
+import Menu from "../shared/Menu.astro";
+---
+
+<Layout title="David">
+  <main class="">
+    <div id="container-first-present" class="h-full md:pr-10 md:pl-20">
+      <Menu />
+      <Presentation />
+      <div class="md:w-[65vw]  rounded-lg shadow-lg shadow-secondary">
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      </div>
+    </div>
+  </main>
+  <script>
+    let scrolly = 0;
+    const container = document.getElementById("container-first-present");
+    container!.addEventListener("mousemove", (e) => {
+      const x = e.clientX - container!.offsetLeft;
+      const y = e.clientY - container!.offsetTop;
+      container!.style.background = `radial-gradient(circle at ${x}px ${
+        scrolly + y
+      }px, #878f9a -100%, #222831 20%)`;
+    });
+    window.addEventListener("scroll", (e) => {
+      scrolly = window.scrollY;
+    });
+  </script>
+  <style>
+    
+    #container-first-present {
+      background: radial-gradient(
+        circle at 0px 0px,
+        #878f9a -100%,
+        #222831 20%
+      );
+    }
+  </style>
+  
+</Layout>

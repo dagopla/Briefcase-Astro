@@ -1,0 +1,99 @@
+<header class="fixed left-0 top-0 z-50">
+  <button class="iconMenu md:hidden bg-transparent absolute text-white py-3 z-50 px-2"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-list w-9 h-9 fill-white cursor-pointer"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+      ></path>
+    </svg></button
+  >
+  <nav
+    class="absolute top-0 w-[100vw] h-[100vh] flex justify-center items-center backdrop-blur-md bg-black/30 hidden
+    md:flex md:w-[10vw] md:h-[100vh] md:bg-transparent md:backdrop-blur-none md:justify-center md:items-center md:fixed md:top-0 md:right-16 md:z-50]"
+  >
+    <ul class="flex justify-center items-center m-0 flex-col w-full">
+      <li class="li-menu">
+        <a class="alink" href="#about" ><span>About</span></a>
+      </li>
+      <li class="li-menu">
+        <a class="alink" href="#skills" >Skills</a>
+      </li>
+      <li class="li-menu">
+        <a class="alink" href="#projects">Projects</a>
+      </li>
+      <li class="li-menu">
+        <a class="alink" href="#contact" >Contact</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<script>
+  const header = document.querySelector("header");
+  const iconMenu = document.querySelector(".iconMenu");
+  const nav = document.querySelector("nav");
+  iconMenu!.addEventListener("click", () => {
+    nav!.classList.toggle("hidden");
+    if (nav!.classList.contains("show")) {
+      header!.style.backgroundColor = "#000";
+    } else {
+      header!.style.backgroundColor = "transparent";
+    }
+  });
+  const links = document.querySelectorAll(".alink");
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      console.log(e);
+      nav!.classList.add("hidden");
+      header!.style.backgroundColor = "transparent";
+    });
+  });
+  const setActiveSection=()=>{
+    const sections = document.querySelectorAll("section");
+    const links = document.querySelectorAll(".alink");
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          links.forEach((link) => {
+            if (link.getAttribute("href") === `#${entry.target.id}`) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, options);
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  }
+  window.addEventListener("scroll", setActiveSection);
+</script>
+<style>
+  .li-menu {
+    @apply grid w-full content-center  font-mono  text-xl text-secondary;
+  }
+  .alink {
+    @apply py-16 h-full w-full flex justify-center items-center relative
+    md:py-8 
+    md:hover:text-white md:hover:after:animate-linearwidth md:hover:after:w-full md:hover:after:h-1 md:hover:after:bg-secondary md:hover:after:absolute md:hover:after:bottom-0 md:hover:after:right-0 md:hover:after:transition-all md:hover:after:duration-500 md:hover:after:ease-linear;
+  }
+  .active{
+    @apply transform scale-125 after:animate-linearwidth after:w-full after:h-1 after:bg-secondary after:absolute after:bottom-0 after:right-0 after:transition-all after:duration-500 after:ease-linear
+    md:-translate-x-10 md:-translate-y-4 md:duration-500 md:text-primary md:hover:after:animate-none ;
+  }
+  
+
+</style>
