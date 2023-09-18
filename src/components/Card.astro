@@ -1,22 +1,24 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+	title?: string;
+	body?: string;
+	href?: string;
 }
+
 
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+	<div class="md:flex">
+	  <div class="md:flex-shrink-0">
+		
+	  </div>
+	  <div class="p-8">
+		<div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Mountain</div>
+		<a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Beautiful mountain landscape</a>
+		<p class="mt-2 text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. </p>
+	  </div>
+	</div>
+  </div>
 

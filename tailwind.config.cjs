@@ -28,10 +28,10 @@ module.exports = {
 	plugins: [
 		createThemes({
 			forest: { 
-				'primary': '#E8F6EF',
-				'secondary': '#FFE194',
-				'brand': '#4C4C6D',
-				'accent': '#1B9C85',},
+				'primary': '#EDEDED',
+				'secondary': '#DA0037',
+				'brand': '#444444',
+				'accent': '#171717',},
 		}),
 	],
 }

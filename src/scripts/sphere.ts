@@ -1,11 +1,8 @@
-
-<canvas id="canvas-sphere" class="w-full h-full relative"></canvas>
-<script >
+import { log } from 'astro/dist/core/logger/core';
 import * as THREE from 'three';
 
 export class Sphere {
-
-  public canvas:any=document.getElementById("canvas-sphere");
+  private canvas:HTMLCanvasElement= document.getElementById("canvas") as HTMLCanvasElement;
   public rotationSpeedX: number = 0.001;
   public rotationSpeedY: number = 0.005;
   public size: number = 200;
@@ -36,13 +33,10 @@ export class Sphere {
 
   start(): void {
     console.log("App is running");
-    console.log(this.canvas);
-    console.log(this.size);
     this.crateScene();
     this.startRenderingLoop();
 
   }
-  
 
   private crateScene(): void {
     this.scene = new THREE.Scene();
@@ -99,8 +93,5 @@ export class Sphere {
     this.scene.background = texture;
   }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const app = new Sphere();
-  app.start();
-});
-</script>
+
+Sphere.prototype.start();

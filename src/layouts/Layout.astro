@@ -14,23 +14,32 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/src/styles.css" />
     <title>{title}</title>
   </head>
   <body>
     <slot />
   </body>
 </html>
+
 <style is:global>
   .title {
-    @apply text-4xl font-bold text-primary;
+    @apply text-4xl font-mono  text-primary;
   }
   .content-section {
     @apply flex flex-col items-center ;
   }
   .section {
-    @apply h-[100vh] grid content-center rounded-3xl;
+    @apply min-h-[100vh] grid content-center rounded-3xl font-thin ;
   }
+  .raya{
+    @apply h-[300px] w-[300vw] absolute z-30 bg-black -rotate-45 -translate-x-[90vw] opacity-60;
+  }
+  .rayados{
+    @apply h-[400px] w-[300vw] fixed z-30 bg-black rotate-[80deg] -translate-x-[60vw] opacity-30;
+  }
+  .secundary-btn {
+        @apply bg-transparent text-primary font-bold py-2 px-4 rounded border-2 border-secondary hover:bg-primary hover:text-accent;
+      }
   html {
     font-family: system-ui, sans-serif;
   }

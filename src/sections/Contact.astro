@@ -1,14 +1,36 @@
 <section id="contact" class="section">
-  <div class="content-section">
-    <h2 class="title">Contact Me</h2>
-    <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <div class="content-section relative">
+    <h2 class="title">Contactame</h2>
+    <div class="w-full">
+      <form id="contact-form items-center justify-center ">
+        <div class="text-primary content-input">
+          <label for="name">Name:</label>
+          <input class="input-init" type="text" id="name" name="name" required />
+        </div>
+        <div class="text-primary content-input">
+          <label for="email">Email:</label>
+          <input class="input-init" type="email" id="email" name="email" required />
+        </div>
+        <div class="text-primary content-input">
+          <label for="message">Message:</label>
+          <textarea class="text-black w-[400px] h-[100px]" id="message" name="message" required></textarea>
+        </div> <br>
+        <div class="content-input">
+          <button class="text-primary secundary-btn" type="submit"
+          >Send Message</button
+        >
+        </div>
+
+        
+      </form>
+    </div>
   </div>
 </section>
+<style>
+  .content-input{
+    @apply grid place-content-center p-4 relative
+  }
+  .input-init{
+    @apply  rounded-md border-2 border-primary p-2  text-black w-[200px] font-semibold
+  }
+</style>
