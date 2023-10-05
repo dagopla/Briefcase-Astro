@@ -2,7 +2,7 @@
   <div class="content-section relative">
     <h2 class="title">Contactame</h2>
     <div class="w-full">
-      <form id="contact-form items-center justify-center ">
+      <form id="contact-form ">
         <div class="text-primary content-input">
           <label for="name">Name:</label>
           <input class="input-init" type="text" id="name" name="name" required />
@@ -26,6 +26,13 @@
     </div>
   </div>
 </section>
+<script>
+  const form= document.getElementById('contact-form ');
+  form?.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    alert('Por el momento no se puede enviar el mensaje, por favor contactame por mis redes sociales')
+  })
+</script>
 <style>
   .content-input{
     @apply grid place-content-center p-4 relative
