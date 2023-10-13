@@ -1,12 +1,68 @@
-<section id="projects" class="section">
+---
+import CardProject from "../components/CardProject.astro";
+export interface ProyectData {
+  name: string;
+  url: string;
+  tags: string[];
+  img: string;
+  description: string;
+}
+const proyects: ProyectData[] = [
+  {
+    name: "Gifs App",
+    url: "https://buscagifshere.netlify.app/",
+    tags: [ "Angular", "Typescript", "booststrap"],
+    img: "gifsPro.png",
+    description:
+      "Aplicación para buscar gifs con la API de Giphy podras encontrar rapidamente los gifs que deseas",
+  },
+  {
+    name: "Paises App",
+    url: "https://searchcontry.netlify.app",
+    tags: ["Angular", "booststrap", "Typescript"],
+    img: "paises.png",
+    description:
+      "Galeria de paises con la API de RestCountries podras encontrar rapidamente los paises que deseas y ver sus detalles",
+  },
+];
+---
+
+<section id="projects" class="section mx-11">
   <div class="content-section">
-    <span><strong class="text-white">En Desarrollo!</strong></span>
-    <h2 class="title">Proyectos</h2>
-    <div class="project">
-      <h3>Project Title</h3>
-      <p>Project description</p>
-      <a href="project-demo.html">Live Demo</a>
-      <a href="project-repo.html">GitHub Repository</a>
+    <h2 class="title mb-11">Proyectos</h2>
+  </div>
+  <div class="swiper mySwiper max-w-[500px]">
+    <div class="swiper-wrapper">
+      {
+        proyects.map((item) => (
+          <div class="swiper-slide py-14">
+            <CardProject {...item} />
+          </div>
+        ))
+      }
     </div>
+    <div class="swiper-button-next text-secondary"></div>
+    <div class="swiper-button-prev text-secondary"></div>
+    <div class="swiper-pagination text-secondary"></div>
   </div>
 </section>
+<style></style>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+></script>
+
+<!-- Initialize Swiper -->
+<script>
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
+  var swiper = new Swiper(".mySwiper", {
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+  });
+</script>

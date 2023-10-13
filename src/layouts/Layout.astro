@@ -13,6 +13,7 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -24,6 +25,9 @@ const { title } = Astro.props;
 <style is:global>
   .title {
     @apply text-4xl font-mono  text-primary;
+  }
+  .subtitle {
+    @apply text-2xl font-mono text-secondary;
   }
   .content-section {
     @apply flex flex-col items-center ;
