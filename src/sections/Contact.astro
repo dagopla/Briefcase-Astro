@@ -2,18 +2,22 @@
   <div class="content-section relative">
     <h2 class="title">Contactame</h2>
     <div class="w-full">
-      <form id="contact-form ">
+      <form id="contact-form " action="https://formsubmit.co/d527afab2a0a3c4c460af939c0b586d4 " method="POST">
         <div class="text-primary content-input">
-          <label for="name">Name:</label>
+          <label for="name">Nombre:</label>
           <input class="input-init" type="text" id="name" name="name" required />
         </div>
         <div class="text-primary content-input">
-          <label for="email">Email:</label>
+          <label for="email">Correo:</label>
           <input class="input-init" type="email" id="email" name="email" required />
         </div>
         <div class="text-primary content-input">
-          <label for="message">Message:</label>
-          <textarea class="text-black w-[400px] h-[100px]" id="message" name="message" required></textarea>
+          <label for="subject">Asunto:</label>
+          <input class="input-init" type="text" id="subject" name="subject" required />
+        </div>
+        <div class="text-primary content-input">
+          <label for="message">Mensaje:</label>
+          <textarea class="text-black w-[400px] h-[100px]" id="message" name="comments" required></textarea>
         </div> <br>
         <div class="content-input">
           <button class="text-primary secundary-btn" type="submit"
@@ -58,10 +62,10 @@
 </section>
 <script>
   const form= document.getElementById('contact-form ');
-  form?.addEventListener('submit',(e)=>{
-    e.preventDefault();
-    alert('Por el momento no se puede enviar el mensaje, por favor contactame por mis redes sociales')
-  })
+  // form?.addEventListener('submit',async (e)=>{
+  //   e.preventDefault();
+    
+  // })
 </script>
 <style>
   .content-input{

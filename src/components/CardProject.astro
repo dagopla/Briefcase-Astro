@@ -5,12 +5,12 @@ const { name, url, tags, img, description } = proyects;
 ---
 
 <div class="project text-primary">
-  <h3 class="subtitle text-center">{name}</h3>
+  <h3 class="subtitle text-center font-extrabold my-2">{name}</h3>
   <div class="w-full grid place-items-center">
     <div class="w-1/2">
       <a href={url} target="_blank">
         <img
-          class="rounded-md shadow-md shadow-secondary"
+          class="rounded-md shadow-md shadow-secondary hover:animate-pulse"
           src={img}
           alt="Miniatura de la página web"
         />
@@ -23,7 +23,10 @@ const { name, url, tags, img, description } = proyects;
   <br />
   <p class="text-center">{description}</p>
   <br />
-  <div class="flex gap-2 justify-center">
+  <div class="flex gap-2 justify-center flex-wrap">
     {tags.map((element: any) => <Tags name={element} />)}
   </div>
 </div>
+<style>
+
+</style>
