@@ -5,26 +5,32 @@ const { name, url, tags, img, description } = proyects;
 ---
 
 <div class="project text-primary">
-  <h3 class="subtitle text-center font-extrabold my-2">{name}</h3>
-  <div class="w-full grid place-items-center">
-    <div class="w-1/2">
-      <a href={url} target="_blank">
-        <img
-          class="rounded-md shadow-md shadow-secondary hover:animate-pulse"
-          src={img}
-          alt="Miniatura de la página web"
-        />
-      </a>
-      <div class="atropos-inner">
-        <!-- put your custom content here -->
+  
+  <div class="py-7 grid place-items-center">
+    <div class="w-full grid place-items-center">
+      <div class="w-1/2">
+        <a href={url} target="_blank">
+          <img
+            class="rounded-md shadow-md shadow-secondary"
+            src={img}
+            alt="Miniatura de la página web"
+          />
+        </a>
+        <div class="atropos-inner">
+          <!-- put your custom content here -->
+        </div>
       </div>
     </div>
-  </div>
-  <br />
-  <p class="text-center">{description}</p>
-  <br />
-  <div class="flex gap-2 justify-center flex-wrap">
-    {tags.map((element: any) => <Tags name={element} />)}
+    <div class="w-[375px] lg:w-full">
+      <h3 class="subtitle text-center font-extrabold my-2">{name}</h3>
+       <br />
+    <p class="text-center">{description}</p>
+    <br />
+    <div class="flex gap-2 justify-center flex-wrap">
+      {tags.map((element: any) => <Tags name={element} />)}
+    </div>
+    </div>
+   
   </div>
 </div>
 <style>

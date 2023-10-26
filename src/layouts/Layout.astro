@@ -24,16 +24,16 @@ const { title } = Astro.props;
 
 <style is:global>
   .title {
-    @apply text-4xl font-mono  text-primary;
+    @apply text-4xl font-mono  text-secondary;
   }
   .subtitle {
-    @apply text-2xl font-mono text-secondary;
+    @apply text-2xl font-mono text-primary;
   }
   .content-section {
     @apply flex flex-col items-center ;
   }
   .section {
-    @apply min-h-[100vh] grid content-center rounded-3xl font-thin ;
+    @apply lg:min-h-[100vh] grid content-center rounded-3xl font-thin my-36 ;
   }
   .raya{
     @apply h-[300px] w-[300vw] absolute z-30 bg-black -rotate-45 -translate-x-[90vw] opacity-60;
@@ -51,6 +51,15 @@ const { title } = Astro.props;
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
+  @keyframes shadow-efect {
+    from{
+      box-shadow: 1.2px 2.4px 2.4px hsla(0, 0%, 99%, 0.46);
+    }
+    to{
+    box-shadow: 7.2px 14.4px 14.4px hsla(0, 0%, 97%, 0.28);
+
+    }
+   }
 
 
 
